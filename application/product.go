@@ -2,9 +2,8 @@ package application
 
 import (
 	"errors"
-	uuid "github.com/satori/go.uuid"
-
 	"github.com/asaskevich/govalidator"
+	uuid "github.com/satori/go.uuid"
 )
 
 func init() {
@@ -80,7 +79,7 @@ func (p *Product) IsValid() (bool, error) {
 }
 
 func (p *Product) Enable() error {
-	if p.Price > 0 {
+	if p.Price > 1 {
 		p.Status = ENABLED
 		return nil
 	}
